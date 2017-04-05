@@ -25,7 +25,7 @@ class SimpleCov::Formatter::ShieldFormatter
   end
 
   def shield_url
-    url = "#{SHIELD_ROOT}/#{badge_name}-#{coverage_percent}%-#{color}.svg"
+    url = "#{SHIELD_ROOT}/#{badge_name}-#{coverage_percent}%-#{color}.png"
     url += "?style=#{style}" if STYLES.include? style
 
     URI.encode(url)
@@ -41,7 +41,7 @@ class SimpleCov::Formatter::ShieldFormatter
 
   private
   def shield_file_path
-    "#{SimpleCov.coverage_path}/coverage.svg"
+    "#{Rails.root}/coverage.png"
   end
 
   def color
